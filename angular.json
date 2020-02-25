@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "TSFlightsApp": {
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "TSFlightsApp"
+    }
+  },
+  "defaultProject": "TSFlightsApp",
+  "cli": {
+    "analytics": "aeffe79e-c8d3-4282-968b-ff49f83b67f4"
+  }
 }
