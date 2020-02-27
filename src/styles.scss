@@ -23,9 +23,15 @@ header {
         height: 80px;
         width: 250px;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: contain;
+        background-position-y: center;
         margin: 10px 20px;
         align-self: flex-start;
+        @media screen and (max-width: 497px) {
+            width: 200px;
+            margin-left: 4px;
+            margin-top: 7px;
+        }
     }
 
     .link_box {
