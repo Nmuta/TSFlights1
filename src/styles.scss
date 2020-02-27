@@ -30,9 +30,21 @@ header {
 
     .link_box {
         height: 80px;
-        margin: 10px;
+        margin: 18px 10px;
         align-self: flex-end;
-        border: 1px dotted grey;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        button {
+            border-radius: 9px;
+            width: 100px;
+            height: 30px;
+            background-color: #415D65;
+            color: white;
+            text-align: center;
+        }
     }
 }
+
 
