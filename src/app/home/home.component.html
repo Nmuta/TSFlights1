@@ -1,4 +1,5 @@
-<div>  
+<div class="container">
+  <div class="flight_pane">  
     <div *ngFor="let flight of flights" class="flight_results">
       <div class="flight_number"> {{flight.flightNumber}}</div>
       <div class="departs"> {{flight.depart | date }}</div>
@@ -6,5 +7,4 @@
       <div class="nonstop"> {{flight.nonstop}}</div>
     </div>
   <div>
-  
-    
+</div>

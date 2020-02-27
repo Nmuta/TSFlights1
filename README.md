@@ -1,5 +1,4 @@
 # TSFlightsApp
 
-This repo is the first in a series of tutorials to help students build the TSFlights application. 
+Step four focuses on setting up the flights pane
 
-This particular iteration covers the foundational process of setting up routes. 
