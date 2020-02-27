@@ -14,5 +14,25 @@ header {
     width: 100vw;
     height: 100px;
     background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    .logo_box {
+        background-image: url("https://tsflights-images.firebaseapp.com/TsFlightsHorizLogo.jpg");
+        height: 80px;
+        width: 250px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 10px 20px;
+        align-self: flex-start;
+    }
+
+    .link_box {
+        height: 80px;
+        margin: 10px;
+        align-self: flex-end;
+        border: 1px dotted grey;
+    }
 }
 
