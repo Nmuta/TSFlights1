@@ -1,4 +1,4 @@
 # TSFlightsApp
 
-Step four focuses on setting up the flights pane
+Step five finishes the flights layout for now
 

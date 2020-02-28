@@ -2,10 +2,29 @@
 
   <div class="big_container">
     <div class="top_bar">
-      
+      <span>Find Flights</span>
     </div>
     <div class="transparent_bg">
       <div class="container">
+        <div class="search_pane"> 
+          <div class="search_box">
+            <select>
+              <option value="" disabled selected>from</option>
+              <option value="nyc" >New York</option>
+              <option value="london" >London</option>
+              <option value="lax" >Los Angeles</option>
+            </select>
+          </div>
+          <div class="search_box">
+            <select>
+              <option value="" disabled selected>to</option>
+              <option value="nyc" >New York</option>
+              <option value="london" >London</option>
+              <option value="lax" >Los Angeles</option>
+            </select>
+          </div>
+          <button>Go</button>
+        </div>
         <div class="flight_pane">  
           <div class="flight_headers">
             <div class="flight_number cell"> Flight # </div>
@@ -16,8 +35,8 @@
           
           <div *ngFor="let flight of flights" class="flight_results">
             <div class="flight_number cell"> {{flight.flightNumber}}</div>
-            <div class="departs cell"> {{flight.depart | date }}</div>
-            <div class="arrives cell"> {{flight.arrive | date }}</div>
+            <div class="departs cell"> {{flight.depart | date : 'shortDate' }}</div>
+            <div class="arrives cell"> {{flight.arrive | date : 'shortDate' }}</div>
             <div class="nonstop cell"> {{flight.nonstop}}</div>
           </div>
           <div>
