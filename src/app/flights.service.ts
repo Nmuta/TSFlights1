@@ -16,7 +16,9 @@ export class FlightsService {
   }
 
   postFlight(flight: Flight) {
-
+    return this.http.post(`http://localhost:3002/flights`,flight).subscribe(data =>{
+      console.log("data posted to server!")
+    })
   }
 
   deleteFlight(id: number) {
