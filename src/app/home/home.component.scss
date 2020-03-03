@@ -81,6 +81,18 @@
           .flight_results {
             display: flex;
             flex-direction: row;
+            .mobile {
+              display: none;
+              @media screen and (max-width: 599px) {
+                display: block;
+              }
+            }
+            .fullscreen {
+              display: none;
+              @media screen and (min-width: 600px) {
+                display: block;
+              }
+            }
         }
         
           .flight_headers {

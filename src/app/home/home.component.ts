@@ -11,14 +11,22 @@ import { Flight } from '../flight.model';
 export class HomeComponent implements OnInit {
 
   flights: Flight[];
+  selectedOrigin: string;
+  selectedDestination: string;
 
   constructor(private flightsService: FlightsService) { }
 
   ngOnInit(): void {
-    this.flightsService.getFlights().subscribe(data =>{
+    
+  }
+
+  query(): void {
+    const origin = this.selectedOrigin;
+    const destination = this.selectedDestination;
+
+    this.flightsService.getFlights(origin, destination).subscribe(data =>{
       this.flights = data;
     })
   }
 
 }
-
