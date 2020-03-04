@@ -15,7 +15,7 @@ export class FlightsService {
   backEndURL: string;
 
   getFlights(orig: string, dest: string): Observable<any> {
-    return this.http.get(`${this.backEndURL}/${orig}/${dest}`);
+    return this.http.get(`${this.backEndURL}/query/${orig}/${dest}`);
   }
 
   postFlight(flight: Flight) {
@@ -30,7 +30,7 @@ export class FlightsService {
   getBackEndUrl(): string {
     const segements = document.URL.split('/');
     const reggie = new RegExp(/localhost/);
-    return reggie.test(segements[2]) ? 'http://localhost:3002' : 'https://shrouded-ravine-23045.herokuapp.com/';
+    return reggie.test(segements[2]) ? 'http://localhost:3002' : 'https://shrouded-ravine-23045.herokuapp.com';
   }
 
 }
