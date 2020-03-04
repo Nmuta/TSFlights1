@@ -5,5 +5,5 @@ export interface Flight {
     flightNumber: number; 
     depart: Date; 
     arrive: Date; 
-    nonstop: boolean 
+    nonstop: boolean;
   };
