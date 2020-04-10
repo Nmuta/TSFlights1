@@ -15,7 +15,11 @@ export class FlightsService {
   backEndURL: string;
 
   getFlights(orig: string, dest: string): Observable<any> {
-    return this.http.get(`${this.backEndURL}/query/${orig}/${dest}`);
+    return this.http.get(`${this.backEndURL}/flights/query/${orig}/${dest}`);
+  }
+
+  getAllFlights(): Observable<any> {
+    return this.http.get(`${this.backEndURL}/flights`);
   }
 
   postFlight(flight: Flight) {
