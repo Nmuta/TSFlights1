@@ -10,13 +10,13 @@
           <div class="search_box">
             <select [(ngModel)]="selectedOrigin">
               <option value="" disabled selected>from</option>
-              <option *ngFor ="let city of filteredOriginList; let i=index" value={{i}} >{{city}}</option>
+              <option *ngFor ="let city of filteredOriginList; let i=index" value={{city}} >{{city}}</option>
             </select>
           </div>
           <div class="search_box">
             <select [(ngModel)]="selectedDestination">
               <option value="" disabled selected>to</option>
-              <option *ngFor ="let city of filteredDestinationList; let i=index" value={{i}} >{{city}}</option>
+              <option *ngFor ="let city of filteredDestinationList; let i=index" value={{city}} >{{city}}</option>
             </select>
           </div>
           <div class="search_box">
