@@ -18,8 +18,12 @@ export class AdminComponent implements OnInit {
   depart: Date;
   arrive: Date;
   nonstop: boolean = false;
+  flightList: any[];
 
   ngOnInit(): void {
+    this.flightService.getAllFlights().subscribe(data =>{
+      this.flightList = data;
+    })
   }
 
   toggleNonStop(){
