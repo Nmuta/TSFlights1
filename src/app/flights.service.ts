@@ -23,8 +23,7 @@ export class FlightsService {
   }
 
   postFlight(flight: Flight) {
-    return this.http.post(`${this.backEndURL}/flights`,flight).subscribe(data =>{
-    })
+    return this.http.post(`${this.backEndURL}/flights`,flight);
   }
 
   updateFlight(flight: Flight) {

@@ -37,12 +37,16 @@ export class AdminComponent implements OnInit {
       arrive: this.arrive,
       nonstop: this.nonstop
     }
-    this.flightService.postFlight(flight);
+    this.flightService.postFlight(flight).subscribe(data => {
+      console.log(data);
+      if(data && data['origin']){
+        this.refresh();
+      }
+    });
   }
 
   update(flight:Flight){
     this.flightService.updateFlight(flight).subscribe(data =>{
-      console.log('data is', data);
       if(data && data['affected']){
         this.refresh();
       }
@@ -50,12 +54,14 @@ export class AdminComponent implements OnInit {
   }
 
   delete(flight:Flight){
-    this.flightService.deleteFlight(flight.id).subscribe(data =>{
-      console.log('data is', data);
-      if(data && data['affected']){
-        this.refresh();
-      }
-    });
+    if (window.confirm('are you sure you want to delete this flight? ')){
+      this.flightService.deleteFlight(flight.id).subscribe(data =>{
+        console.log('data is', data);
+        if(data && data['affected']){
+          this.refresh();
+        }
+      });
+    }
   }
 
   refresh(){
