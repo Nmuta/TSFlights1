@@ -27,6 +27,10 @@ export class FlightsService {
     })
   }
 
+  updateFlight(flight: Flight) {
+    return this.http.post(`${this.backEndURL}/flights/${flight.id}/update`,flight);
+  }
+
   deleteFlight(id: number) {
     
   }

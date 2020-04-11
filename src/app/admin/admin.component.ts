@@ -21,9 +21,7 @@ export class AdminComponent implements OnInit {
   flightList: any[];
 
   ngOnInit(): void {
-    this.flightService.getAllFlights().subscribe(data =>{
-      this.flightList = data;
-    })
+    this.refresh();
   }
 
   toggleNonStop(){
@@ -43,7 +41,18 @@ export class AdminComponent implements OnInit {
   }
 
   update(flight:Flight){
-    console.log(`This is what our new flight will look like:`, flight);
+    this.flightService.updateFlight(flight).subscribe(data =>{
+      console.log('data is', data);
+      if(data && data['affected']){
+        this.refresh();
+      }
+    });
+  }
+
+  refresh(){
+    this.flightService.getAllFlights().subscribe(data =>{
+      this.flightList = data;
+    })
   }
 
 }
