@@ -19,10 +19,12 @@ export class AdminComponent implements OnInit {
   arrive: Date;
   nonstop: boolean = false;
   flightList: any[];
+  dynamicFlights: Flight[];
 
   ngOnInit(): void {
     this.flightService.getAllFlights().subscribe(data =>{
       this.flightList = data;
+      this.dynamicFlights = data;
     })
   }
 
@@ -40,7 +42,11 @@ export class AdminComponent implements OnInit {
       nonstop: this.nonstop
     }
     this.flightService.postFlight(flight);
+  }
 
+  update(flight:Flight){
+    console.log(`received request to make this the new origin:  ${flight.origin} 
+    on this item in the database: ${flight.id} `);
   }
 
 }

@@ -31,13 +31,13 @@
             <td>delete</td>
         </tr>
         <tr *ngFor="let flight of flightList; let i=index">
-            <td>{{flight.origin}}</td>
+            <td><input [(ngModel)]='dynamicFlights[i].origin' value={{dynamicFlights[i].origin}}></td>
             <td>{{flight.destination}}</td>
             <td>{{flight.flightNumber}}</td>
             <td>{{flight.depart | date : 'shortDate'}}</td>
             <td>{{flight.arrive | date : 'shortDate'}}</td>
             <td>{{flight.nonstop}}</td>
-            <td><button class="update">go</button></td>
+            <td><button class="update" (click)="update(flight)">go</button></td>
             <td><button class="delete">go</button></td>
         </tr>
     </table>
