@@ -49,6 +49,15 @@ export class AdminComponent implements OnInit {
     });
   }
 
+  delete(flight:Flight){
+    this.flightService.deleteFlight(flight.id).subscribe(data =>{
+      console.log('data is', data);
+      if(data && data['affected']){
+        this.refresh();
+      }
+    });
+  }
+
   refresh(){
     this.flightService.getAllFlights().subscribe(data =>{
       this.flightList = data;

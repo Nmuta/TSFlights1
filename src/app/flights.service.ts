@@ -32,7 +32,7 @@ export class FlightsService {
   }
 
   deleteFlight(id: number) {
-    
+    return this.http.post(`${this.backEndURL}/flights/${id}/delete`, null);
   }
 
   getBackEndUrl(): string {

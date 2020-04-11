@@ -38,7 +38,7 @@
             <td>{{flight.arrive | date : 'shortDate'}}</td>
             <td>{{flight.nonstop}}</td>
             <td><button class="update" (click)="update(flight)">go</button></td>
-            <td><button class="delete">go</button></td>
+            <td><button class="delete" (click)="delete(flight)">go</button></td>
         </tr>
     </table>
 </div>
