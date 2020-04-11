@@ -32,8 +32,8 @@
         </tr>
         <tr *ngFor="let flight of flightList; let i=index">
             <td><input [(ngModel)]='flightList[i].origin' value={{flightList[i].origin}}></td>
-            <td>{{flight.destination}}</td>
-            <td>{{flight.flightNumber}}</td>
+            <td><input [(ngModel)]='flightList[i].destination' value={{flightList[i].destination}}></td>
+            <td><input [(ngModel)]='flightList[i].flightNumber' value={{flightList[i].flightNumber}}></td>
             <td>{{flight.depart | date : 'shortDate'}}</td>
             <td>{{flight.arrive | date : 'shortDate'}}</td>
             <td>{{flight.nonstop}}</td>

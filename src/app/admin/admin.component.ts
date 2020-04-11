@@ -43,8 +43,7 @@ export class AdminComponent implements OnInit {
   }
 
   update(flight:Flight){
-    console.log(`received request to make this the new origin:  ${flight.origin} 
-    on this item in the database: ${flight.id} `);
+    console.log(`This is what our new flight will look like:`, flight);
   }
 
 }
