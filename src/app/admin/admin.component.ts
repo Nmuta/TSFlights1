@@ -19,12 +19,10 @@ export class AdminComponent implements OnInit {
   arrive: Date;
   nonstop: boolean = false;
   flightList: any[];
-  dynamicFlights: Flight[];
 
   ngOnInit(): void {
     this.flightService.getAllFlights().subscribe(data =>{
       this.flightList = data;
-      this.dynamicFlights = data;
     })
   }
 
