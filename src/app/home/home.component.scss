@@ -18,7 +18,10 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      span {margin-left: 20px;}
+      div.notice {
+        margin-left: 20px;
+        div.sub-text {font-size: 0.5em}
+      }
       
     }
   
