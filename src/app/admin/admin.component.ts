@@ -11,6 +11,7 @@ export class AdminComponent implements OnInit {
 
   constructor(private flightService: FlightsService) { }
 
+  loading = true;
  
   origin: string;
   destination: string;
@@ -65,8 +66,10 @@ export class AdminComponent implements OnInit {
   }
 
   refresh(){
+    this.loading = true;
     this.flightService.getAllFlights().subscribe(data =>{
       this.flightList = data;
+      this.loading = false;
     })
   }
 

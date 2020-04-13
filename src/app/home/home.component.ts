@@ -10,6 +10,8 @@ import { Flight } from '../flight.model';
 })
 export class HomeComponent implements OnInit {
 
+  loading = true;
+
   flights: Flight[];
   selectedOrigin: string;
   selectedDestination: string;
@@ -24,6 +26,7 @@ export class HomeComponent implements OnInit {
       let fullDestList = data.map((flight) => flight.destination);
       this.filteredOriginList = [ ...new Set(fullList)];
       this.filteredDestinationList = [ ...new Set(fullDestList)];
+      this.loading = false;
     })
   }
 

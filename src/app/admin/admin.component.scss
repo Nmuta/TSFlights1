@@ -1,4 +1,4 @@
-.admin_panel {
+.admin-panel {
     font-size: 1.1em;
     font-family: Arial, Helvetica, sans-serif;
     margin: 10px;
@@ -21,7 +21,7 @@
     button{ background-color: green;}
 }
 
-.editPanel {
+.edit-panel, .notice-panel  {
     font-family: Arial, Helvetica, sans-serif;
     margin: 10px;
     background-color: #ddd;
@@ -58,4 +58,9 @@
         background-color: red;
     }
 
+}
+
+.notice-panel {
+    background-color: white;
+    color: red;
 }
