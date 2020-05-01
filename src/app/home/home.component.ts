@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   selectedDestination: string;
   filteredOriginList: any[];
   filteredDestinationList: any[];
+  noFlightsFound: boolean = false;
 
   constructor(private flightsService: FlightsService) { }
 
@@ -34,11 +35,15 @@ export class HomeComponent implements OnInit {
   }
 
   query(): void {
+    this.noFlightsFound = false;
     const origin = this.selectedOrigin;
     const destination = this.selectedDestination;
 
     this.flightsService.getFlights(origin, destination).subscribe(data =>{
       this.flights = data;
+      if(data.length === 0 ) {
+        this.noFlightsFound = true;
+      }
     })
   }
 

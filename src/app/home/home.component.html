@@ -32,6 +32,10 @@
             <div class="arrives cell"> Arrives </div>
             <div class="nonstop cell"> Nonstop </div>
           </div>
+
+          <div *ngIf="noFlightsFound">
+            -- no flights found -- 
+          </div>
           
           <div *ngFor="let flight of flights" class="flight_results">
             <div class="flight_number cell"> {{flight.flightNumber}}</div>
