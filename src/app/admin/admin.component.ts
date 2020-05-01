@@ -39,7 +39,6 @@ export class AdminComponent implements OnInit {
       nonstop: this.nonstop
     }
     this.flightService.postFlight(flight).subscribe(data => {
-      console.log(data);
       if(data && data['origin']){
         this.refresh();
       }
@@ -57,7 +56,6 @@ export class AdminComponent implements OnInit {
   delete(flight:Flight){
     if (window.confirm('are you sure you want to delete this flight? ')){
       this.flightService.deleteFlight(flight.id).subscribe(data =>{
-        console.log('data is', data);
         if(data && data['affected']){
           this.refresh();
         }
