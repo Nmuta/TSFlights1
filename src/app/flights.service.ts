@@ -22,6 +22,14 @@ export class FlightsService {
     return this.http.get(`${this.backEndURL}/flights`);
   }
 
+  getAllOrigins(): Observable<any> {
+    return this.http.get(`${this.backEndURL}/flights/cities/origins`);
+  }
+
+  getAllDestinations(): Observable<any> {
+    return this.http.get(`${this.backEndURL}/flights/cities/destinations`);
+  }
+
   postFlight(flight: Flight) {
     return this.http.post(`${this.backEndURL}/flights`,flight);
   }

@@ -21,13 +21,16 @@ export class HomeComponent implements OnInit {
   constructor(private flightsService: FlightsService) { }
 
   ngOnInit(): void {
-    this.flightsService.getAllFlights().subscribe(data =>{
-      let fullList = data.map((flight) => flight.origin);
-      let fullDestList = data.map((flight) => flight.destination);
-      this.filteredOriginList = [ ...new Set(fullList)];
-      this.filteredDestinationList = [ ...new Set(fullDestList)];
+    this.flightsService.getAllOrigins().subscribe(data =>{
+      this.filteredOriginList = data;
       this.loading = false;
-    })
+    }); 
+
+    this.flightsService.getAllDestinations().subscribe(data =>{
+      this.filteredDestinationList = data;
+      this.loading = false;
+    });
+
   }
 
   query(): void {
